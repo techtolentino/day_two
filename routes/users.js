@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var User = require('../models/user');
+
 // Get registration
 router.get('/register', function(req, res) {
 	res.render('register');
@@ -12,19 +14,19 @@ router.get('/login', function(req, res) {
 
 // Post registration
 router.post('/register', function(req, res) {
-	var firstname = req.body.firstname,
-		lastname = req.body.lastname,
+	var name = req.body.name,
 		username = req.body.username,
+		squadname = req.body.squadname,
 		email = req.body.email,
 		password = req.body.password,
 		password2 = req.body.password2;
 
 	// form validation
-	req.checkBody('firstname', 'First name is required').notEmpty();
-	req.checkBody('lastname', 'Last name is required').notEmpty();
+	req.checkBody('name', 'Name is required').notEmpty();
+	req.checkBody('username', 'Username is required').notEmpty();
+	req.checkBody('squadname', 'Squad name is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
 	req.checkBody('email', 'Email is invalid').isEmail();
-	req.checkBody('username', 'Username is required').notEmpty();
 	req.checkBody('password', 'Password is required').notEmpty();
 	req.checkBody('password', 'Passwords do not match').equals(req.body.password);
 
@@ -36,7 +38,20 @@ router.post('/register', function(req, res) {
 		});
 		console.log("The form has errors");
 	} else {
-		console.log("Form successfully submitted");
+		var newUser = new User({
+			name: name,
+			email: email,
+			username: username,
+			password: password
+		})
+
+		User.createUser(newUser,function(err, user) {
+			if(err) throw err;
+			console.log(user);
+		})
+		
+		req.flash('success_msg', 'You are registered and can now log in');
+		res.redirect('/users/login');
 	}
 
 });

@@ -14,6 +14,12 @@
             <li><a href="/users/logout">Logout</a></li>
         </ul>
     </nav>
+    {{#if error_msg}}{{msg}}{{/if}}
+    {{#if success_msg}}{{msg}}{{/if}}
+    {{#if error}}{{msg}}{{/if}}
+    <div class="errors">
+        
+    </div>
         {{{body}}}
         <a href="/users/register">Register</a>
     </body>
