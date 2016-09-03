@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "./bin/build-css",
+    "watch-css": "./bin/watch-css"
   },
   "author": "Randy Tolentino",
   "license": "ISC",
@@ -24,5 +25,8 @@
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0"
   }
 }

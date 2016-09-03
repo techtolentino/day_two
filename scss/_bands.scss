@@ -1,0 +1,8 @@
+.band {
+    @include padding-top-bottom;
+
+    &--LARGE {
+    	padding-top: $base-spacing-unit * 4;
+    	padding-bottom: $base-spacing-unit * 4;
+    }
+}

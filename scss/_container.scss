@@ -1,0 +1,13 @@
+.container {
+    width: 90%;
+    max-width: 50em;
+    display: block;
+    margin: 0 auto;
+
+    &--TIGHT {
+	    width: 90%;
+	    max-width: 35em;
+	    display: block;
+	    margin: 0 auto;    	
+    }
+}

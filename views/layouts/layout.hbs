@@ -5,22 +5,33 @@
         <link rel="stylesheet" href="/styles/main.css">
     </head>
     <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/starter">Starter</a></li>
-            <li><a href="/users/login">Login</a></li>
-            <li><a href="/users/register">Register</a></li>
-            <li><a href="/users/logout">Logout</a></li>
-        </ul>
-    </nav>
-    {{#if error_msg}}{{msg}}{{/if}}
-    {{#if success_msg}}{{msg}}{{/if}}
-    {{#if error}}{{msg}}{{/if}}
-    <div class="errors">
+        <header class="header">
+            <div class="container">
+                <nav class="header-navigation">
+                    <ul class="header-menu">
+                        <li class="header-menu-item"><a href="/">Home</a></li>
+                        {{#if user}}
+                            <li class="header-menu-item"><a href="/starter">Starter</a></li>
+                            <li class="header-menu-item"><a href="/users/logout">Logout</a></li>
+                        {{else}}
+                            <li class="header-menu-item"><a href="/users/login">Login</a></li>
+                            <li class="header-menu-item"><a href="/users/register">Register</a></li>
+                        {{/if}}
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-    </div>
+        {{#if error_msg}}
+            <div class="message">{{error_msg}}</div>
+        {{/if}}
+        {{#if success_msg}}
+            <div class="message">{{success_msg}}</div>
+        {{/if}}
+        {{#if error}}
+            <div class="message">{{error_msg}}</div>
+        {{/if}}
+        
         {{{body}}}
-        <a href="/users/register">Register</a>
     </body>
 </html>

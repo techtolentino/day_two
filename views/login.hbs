@@ -1,12 +1,16 @@
-<h2>Account Login</h2>
-<form action="/users/login" method="post">
-	<div class="form-group">
-		<label for="name">Username</label>
-		<input class="form-input-field" type="text" placeholder="Username">
+<div class="band--LARGE">
+	<div class="container--TIGHT util-centered">
+		<h2>Account Login</h2>
+		<form class="form" action="/users/login" method="post">
+			<div class="form-group">
+				<label class="form-label" for="name">Username</label>
+				<input class="form-input-field" name="username" type="text" placeholder="Username">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="name">Password</label>
+				<input class="form-input-field" name="password" type="password" placeholder="Password">
+			</div>
+			<button class="form-action" type="submit">Submit</button>
+		</form>
 	</div>
-	<div class="form-group">
-		<label for="name">Password</label>
-		<input class="form-input-field" type="password" placeholder="Password">
-	</div>
-	<button type="submit">Submit</button>
-</form>
+</div>
