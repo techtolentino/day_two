@@ -4,6 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
+var TaskList = require('../models/task-list');
 
 // Get registration
 router.get('/register', function(req, res) {
@@ -21,7 +22,8 @@ router.post('/register', function(req, res) {
 		squadname = req.body.squadname,
 		email = req.body.email,
 		password = req.body.password,
-		password2 = req.body.password2;
+		password2 = req.body.password2,
+		tasks = new TaskList();
 
 	// form validation
 	req.checkBody('name', 'Name is required').notEmpty();
@@ -89,7 +91,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login', passport.authenticate('local',
-		{successRedirect: '/', failureRedirect: '/users/login', failureFlash: true}),
+		{successRedirect: '/starter', failureRedirect: '/users/login', failureFlash: true}),
 	function(req, res) {
 		res.redirect('/starter');
 });

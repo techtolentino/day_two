@@ -1,22 +1,44 @@
 .form {
-	padding-top: $base-spacing-unit;
+	padding: $base-spacing-unit;
+	border: 1px solid $gray-color;
+	margin-bottom: 0;
+
 	&-label {
 		display: block;
 		padding-bottom: $base-spacing-unit / 3;
 		font-size: .875em;
 	}
 
+	&-title {
+		padding-bottom: $base-spacing-unit / 1.5;
+		color: $gray-color;
+	}
+
 	&-group {
 		padding-bottom: $base-spacing-unit / 1.5;
+
+		&:last-of-type {
+			margin-bottom: $base-spacing-unit;
+		}
 	}
 
 	&-input-field {
 		padding-bottom: $base-spacing-unit / 2;
 		padding-top: $base-spacing-unit / 2;
-		padding-left: $base-spacing-unit / 2.25;
+		padding-left: 0;
 		padding-right: $base-spacing-unit / 2.25;
 		width: 100%;
-		max-width: 30em;
+		max-width: 25em;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid $gray-color;
+		font-size: $base-font-size;
+		font-weight: 200;
+
+		&:focus {
+			outline: none;
+			border-bottom: 1px solid $accent-color;
+		}
 	}
 
 	&-action {
@@ -28,6 +50,8 @@
 	    background: transparent;
 	    border-radius: 1px;
 		font-size: $base-font-size * .875;
+		color: $accent-color;
+		text-decoration: none;
 
 		&:hover {
 			background-color: $accent-color;

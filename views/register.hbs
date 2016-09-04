@@ -1,35 +1,33 @@
-<h2>Register</h2>
-{{#if errors}}
-	<div class="form-error">
-	{{#each errors}}
-		<p>{{msg}}</p>
-	{{/each}}
+<div class="band--LARGE">
+	<div class="container--TIGHT util-centered">
+		{{#if errors}}
+		<div class="form-error">
+			{{#each errors}}
+			<p>{{msg}}</p>
+			{{/each}}
+		</div>
+		{{/if}}
+		<form class="form" action="/users/register" method="post">
+			<h2 class="form-title">Register</h2>
+			<div class="form-group">
+				<input class="form-input-field" type="text" placeholder="Name" name="name">
+			</div>
+			<div class="form-group">
+				<input class="form-input-field" type="text" placeholder="Username" name="username">
+			</div>
+			<div class="form-group">
+				<input class="form-input-field" type="text" placeholder="Squad name" name="squadname">
+			</div>
+			<div class="form-group">
+				<input class="form-input-field" type="email" placeholder="Email" name="email">
+			</div>
+			<div class="form-group">
+				<input class="form-input-field" type="password" placeholder="Password" name="password">
+			</div>
+			<div class="form-group">
+				<input class="form-input-field" type="password" placeholder="Confirm password" name="password2">
+			</div>
+			<button class="form-action" type="submit">Submit</button>
+		</form>
+	</div>
 </div>
-{{/if}}
-<form action="/users/register" method="post">
-	<div class="form-group">
-		<label for="name">Name</label>
-		<input class="form-input-field" type="text" placeholder="Name" name="name">
-	</div>	
-	<div class="form-group">
-		<label for="username">Username</label>
-		<input class="form-input-field" type="text" placeholder="Username" name="username">
-	</div>
-	<div class="form-group">
-		<label for="squadname">Squad name</label>
-		<input class="form-input-field" type="text" placeholder="Squad name" name="squadname">
-	</div>	
-	<div class="form-group">
-		<label for="email">Email</label>
-		<input class="form-input-field" type="email" placeholder="Email" name="email">
-	</div>	
-	<div class="form-group">
-		<label for="password">Password</label>
-		<input class="form-input-field" type="password" placeholder="Password" name="password">
-	</div>
-	<div class="form-group">
-		<label for="password2">Confirm Password</label>
-		<input class="form-input-field" type="password" placeholder="Password" name="password2">
-	</div>	
-	<button type="submit">Submit</button>
-</form>

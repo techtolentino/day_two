@@ -9,13 +9,12 @@
             <div class="container">
                 <nav class="header-navigation">
                     <ul class="header-menu">
-                        <li class="header-menu-item"><a href="/">Home</a></li>
+                        <li class="header-menu-item"><a class="header-menu-item-link" href="/">Home</a></li>
                         {{#if user}}
-                            <li class="header-menu-item"><a href="/starter">Starter</a></li>
-                            <li class="header-menu-item"><a href="/users/logout">Logout</a></li>
+                            <li class="header-menu-item"><a class="header-menu-item-link" href="/users/logout">Logout</a></li>
                         {{else}}
-                            <li class="header-menu-item"><a href="/users/login">Login</a></li>
-                            <li class="header-menu-item"><a href="/users/register">Register</a></li>
+                            <li class="header-menu-item"><a class="header-menu-item-link" href="/users/login">Login</a></li>
+                            <li class="header-menu-item"><a class="header-menu-item-link" href="/users/register">Register</a></li>
                         {{/if}}
                     </ul>
                 </nav>

@@ -15,10 +15,10 @@ var userSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	tasks: {
-		type: Array,
-		default: []
-	}
+	tasks: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'TaskList'
+	}]
 });
 
 var User = module.exports = mongoose.model('User', userSchema);
