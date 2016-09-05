@@ -9,12 +9,13 @@ $base-line-height: 1.65;
 $base-spacing-unit: 2em;
 
 // Colors
-$text-color: #525252;
 $background-color: #F7F7F7;
 $accent-color: #2E10FF;
 $cool-color: #2FB6B5;
 $gray-color: #D7D8E0;
+$dark-gray-color: darken($gray-color, 40%);
 $black-color: #040404;
+$text-color: #5E5E5E;
 
 // Width of the content area
 $extra-extra-large-screen: 90em;
