@@ -7,7 +7,7 @@ var taskSchema = mongoose.Schema({
 	squad: {
 		type: String
 	},
-	status: {
+	isDone: {
 		type: Boolean
 	},
 	resource: {
