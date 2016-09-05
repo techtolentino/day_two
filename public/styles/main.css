@@ -60,8 +60,8 @@ body {
   padding-bottom: 1em;
   padding-top: 1em; }
   .band--LARGE {
-    padding-top: 8em;
-    padding-bottom: 8em; }
+    padding-top: 4em;
+    padding-bottom: 4em; }
 
 .container {
   width: 90%;
@@ -83,10 +83,10 @@ body {
     padding-bottom: 0.66667em;
     font-size: .875em; }
   .form-title {
-    padding-bottom: 1.33333em;
+    padding-bottom: 1em;
     color: #D7D8E0; }
   .form-group {
-    padding-bottom: 1.33333em; }
+    padding-bottom: 1em; }
     .form-group:last-of-type {
       margin-bottom: 2em; }
   .form-input-field {
