@@ -4,7 +4,7 @@ var taskSchema = mongoose.Schema({
 	title: {
 		type: String
 	},
-	squad: {
+	squadname: {
 		type: String
 	},
 	isDone: {

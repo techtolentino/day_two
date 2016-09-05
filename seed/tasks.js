@@ -6,7 +6,7 @@ mongoose.connect(process.env.MONGO_DB_DAY_TWO);
 var tasks = [
 	new Task({
 		title: "Task 1",
-		squad: "Demo squad",
+		squadname: "Demo squad",
 		isDone: false,
 		resource: "John Doe",
 		notes: "Lorem ipsum dolor sit amet.",
@@ -18,7 +18,7 @@ var tasks = [
 	}),
 	new Task({
 		title: "Task 2",
-		squad: "Demo squad",
+		squadname: "Demo squad",
 		isDone: false,
 		resource: "James Smith",
 		notes: "Lorem ipsum dolor sit amet.",
@@ -44,3 +44,7 @@ tasks.forEach(function(item) {
 function exit() {
 	mongoose.disconnect();
 }
+
+// Usage:
+// in terminal, run
+// node seed/tasks.js
