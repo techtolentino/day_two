@@ -1,6 +1,8 @@
 var mongoose = require('mongoose'),
 	bcrypt = require('bcryptjs');
 
+var Task = require('../models/tasks').schema;
+
 var userSchema = mongoose.Schema({
 	name: {
 		type: String
@@ -18,10 +20,7 @@ var userSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	tasks: [{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'TaskList'
-	}]
+	tasks: [Task]
 });
 
 var User = module.exports = mongoose.model('User', userSchema);

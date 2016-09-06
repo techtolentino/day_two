@@ -4,7 +4,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
-var TaskList = require('../models/task-list');
+var Task = require('../models/tasks');
 
 // Get registration
 router.get('/register', function(req, res) {
@@ -22,8 +22,7 @@ router.post('/register', function(req, res) {
 		squadname = req.body.squadname,
 		email = req.body.email,
 		password = req.body.password,
-		password2 = req.body.password2,
-		tasks = new TaskList();
+		password2 = req.body.password2;
 
 	// form validation
 	req.checkBody('name', 'Name is required').notEmpty();
@@ -42,19 +41,30 @@ router.post('/register', function(req, res) {
 		});
 		console.log("The form has errors");
 	} else {
+
+
 		var newUser = new User({
 			name: name,
 			username: username,
 			squadname: squadname,
 			email: email,
 			password: password
-		})
+		});
 
 		User.createUser(newUser,function(err, user) {
 			if(err) throw err;
-			console.log(user);
-		})
-
+	
+			Task.find({squadname: squadname}, function(err, docs) {
+				if(err) throw err;
+				docs.forEach(function(doc) {
+					newUser.tasks.push(doc);
+					newUser.save(function(err) {
+						if(err) throw err;
+					});
+				})
+			});
+		});
+		
 		req.flash('success_msg', 'You are registered and can now log in');
 		res.redirect('/users/login');
 	}

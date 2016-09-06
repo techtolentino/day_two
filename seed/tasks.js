@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_DB_DAY_TWO);
 
 var tasks = [
-	new Task({
+	{
 		title: "Task 1",
 		squadname: "Demo squad",
 		isDone: false,
@@ -15,8 +15,8 @@ var tasks = [
 			"http://test2.com",
 			"http://test3.com"
 		]
-	}),
-	new Task({
+	},
+	{
 		title: "Task 2",
 		squadname: "Demo squad",
 		isDone: false,
@@ -27,12 +27,13 @@ var tasks = [
 			"http://example2.com",
 			"http://example3.com"
 		]
-	})
+	}
 ]
 
 var done = 0;
 
 tasks.forEach(function(item) {
+	var item = new Task(item);
 	item.save(function(err, result) {
 		done++;
 		if (done === tasks.length) {

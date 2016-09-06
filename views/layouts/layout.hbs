@@ -22,13 +22,19 @@
         </header>
 
         {{#if error_msg}}
-            <div class="message">{{error_msg}}</div>
+            <div class="container--TIGHT">
+                <div class="message">{{error_msg}}</div>
+            </div>
         {{/if}}
         {{#if success_msg}}
-            <div class="message">{{success_msg}}</div>
+            <div class="container--TIGHT">
+                <div class="message">{{success_msg}}</div>
+            </div>
         {{/if}}
         {{#if error}}
-            <div class="message">{{error_msg}}</div>
+            <div class="container--TIGHT">
+                <div class="message">{{error_msg}}</div>
+            </div>
         {{/if}}
         
         {{{body}}}
