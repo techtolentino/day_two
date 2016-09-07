@@ -41,8 +41,6 @@ router.post('/register', function(req, res) {
 		});
 		console.log("The form has errors");
 	} else {
-
-
 		var newUser = new User({
 			name: name,
 			username: username,
@@ -53,7 +51,7 @@ router.post('/register', function(req, res) {
 
 		User.createUser(newUser,function(err, user) {
 			if(err) throw err;
-	
+
 			Task.find({squadname: squadname}, function(err, docs) {
 				if(err) throw err;
 				docs.forEach(function(doc) {
@@ -64,7 +62,7 @@ router.post('/register', function(req, res) {
 				})
 			});
 		});
-		
+
 		req.flash('success_msg', 'You are registered and can now log in');
 		res.redirect('/users/login');
 	}
@@ -74,11 +72,11 @@ passport.use(new LocalStrategy(
 	function(username, password, done) {
 		User.getUserByUsername(username, function(err, user) {
 			if(err) throw err;
-			
+
 			if(!user){
 				return done(null, false, {message: 'Unknown user'});
 			}
-			
+
 			User.comparePassword(password, user.password, function(err, isMatch){
 				if(err) throw err;
 				if(isMatch) {
