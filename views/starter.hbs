@@ -1,12 +1,9 @@
 <div class="band--LARGE">
 	<div class="container">
-		<h1>Welcome {{user.name}}</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h1 class="page-title">Hello {{user.name}}!</h1>
+		<p class="page-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+		<hr class="divider--ACCENT">
 		<div class="tasks">
 			<ul class="tasks-list">
 			{{#each user.tasks as |task|}}
@@ -16,8 +13,13 @@
 					<p>{{task.notes}}</p>
 					<p class="util-meta">Resource: {{task.resource}}</p>
 					{{!-- breakdown into list --}}
-					<p class="util-meta">Links: {{task.links}}</p>
+					<p class="util-meta">Related links:
+						{{#each task.links as |link|}}
+							<span><a class="link-base" href="{{link}}">{{link}}</a></span>
+						{{/each}}
+					</p>
 				</li>
+				<hr class="divider--GRAY">
 			{{/each}}
 			</ul>
 		</div>
