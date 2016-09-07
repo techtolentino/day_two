@@ -1,5 +1,5 @@
 <div class="band--LARGE">
-	<div class="container--TIGHT util-centered">
+	<div class="container">
 		{{#if errors}}
 		<div class="form-error">
 			{{#each errors}}
@@ -8,7 +8,7 @@
 		</div>
 		{{/if}}
 		<form class="form" action="/users/register" method="post">
-			<h2 class="form-title">Register</h2>
+			<h1 class="page-title">Register</h1>
 			<div class="form-group">
 				<input class="form-input-field" type="text" placeholder="Name" name="name">
 			</div>

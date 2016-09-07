@@ -88,8 +88,6 @@ body {
   margin: 2em 0 2em 0; }
 
 .form {
-  padding: 2em;
-  border: 1px solid #D7D8E0;
   margin-bottom: 0; }
   .form-label {
     display: block;
@@ -105,7 +103,7 @@ body {
   .form-input-field {
     padding-bottom: 1em;
     padding-top: 1em;
-    padding-left: 0;
+    padding-left: 0.33333em;
     padding-right: 0.88889em;
     width: 100%;
     max-width: 25em;
@@ -124,7 +122,7 @@ body {
     padding-right: 2em;
     border: 1px solid #2E10FF;
     background: transparent;
-    border-radius: 1px;
+    border-radius: 2em;
     font-size: 0.875em;
     color: #2E10FF;
     text-decoration: none; }
@@ -157,6 +155,9 @@ body {
 
 .page-title {
   padding-bottom: 0.33333em; }
+
+.page-description {
+  padding-bottom: 1.66667em; }
 
 h1 {
   font-size: 3.157em;
