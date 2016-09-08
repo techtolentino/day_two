@@ -18,16 +18,6 @@
                     "name": "some link name",
                     "url": "http://some.link.url.com"
                 ]
-            },
-            {
-                "title": "some task title",
-                "status": false,
-                "resource": "Bob Smith",
-                "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae totam, fuga reiciendis sed officia earum optio minima amet, quis repellat culpa aperiam? Molestiae vel saepe labore obcaecati earum, nostrum temporibus."
-                "links": [
-                    "name": "some link name",
-                    "url": "http://some.link.url.com"
-                ]
             }
         ]
     }
@@ -39,19 +29,9 @@
 [
     {
         "title": "some task title",
-        "status": false,
+        "isDone": false,
         "resource": "Bob Smith",
         "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum recusandae repudiandae dicta harum at, corrupti dolorum impedit hic nulla adipisci suscipit id quasi sint, aliquam quod. Animi rerum voluptatibus possimus."
-        "links": [
-            "name": "some link name",
-            "url": "http://some.link.url.com"
-        ]
-    },
-    {
-        "title": "some task title",
-        "status": false,
-        "resource": "Bob Smith",
-        "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae totam, fuga reiciendis sed officia earum optio minima amet, quis repellat culpa aperiam? Molestiae vel saepe labore obcaecati earum, nostrum temporibus."
         "links": [
             "name": "some link name",
             "url": "http://some.link.url.com"
@@ -62,3 +42,8 @@
 <!-- Ideas -->
 - Once a user is created, maybe, push a task list into the userName.tasks array, to pre-populate a user's tasks...
 - Figure out a way for different teams to upload their own list of tasks
+- If task is done, check the checkbox
+  - new request
+  - make request to DB, update isDone field, persist
+  - Single checkbox form, maybe
+  - Styled checkbox, animation

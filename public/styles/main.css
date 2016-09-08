@@ -118,14 +118,14 @@ body {
       outline: none;
       border-bottom: 1px solid #2E10FF;
       max-width: none;
-      transition: all .5s ease; }
+      transition: all 1s ease; }
       .form-input-field:focus ~ label {
         color: #2E10FF;
         position: absolute;
         top: 25%;
         right: .3333em;
         padding-right: 0.33333em;
-        transition: all .5s ease; }
+        transition: all 1s ease; }
   .form-action {
     padding-bottom: 1em;
     padding-top: 1em;
