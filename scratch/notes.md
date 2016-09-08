@@ -47,3 +47,4 @@
   - make request to DB, update isDone field, persist
   - Single checkbox form, maybe
   - Styled checkbox, animation
+  - Timestamp?
