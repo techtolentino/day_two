@@ -3,17 +3,19 @@
 
 	&-label {
 		display: block;
-		padding-bottom: $base-spacing-unit / 3;
+		padding-left: $base-spacing-unit / 6;
 		font-size: .875em;
+		height: 0;
+		color: transparent;
 	}
 
 	&-title {
-		padding-bottom: $base-spacing-unit / 2;
 		color: $dark-gray-color;
 	}
 
 	&-group {
 		padding-bottom: $base-spacing-unit / 2;
+		position: relative;
 
 		&:last-of-type {
 			margin-bottom: $base-spacing-unit;
@@ -36,6 +38,17 @@
 		&:focus {
 			outline: none;
 			border-bottom: 1px solid $accent-color;
+			max-width: none;
+			transition: all .5s ease;
+
+			~ label {
+				color: $accent-color;
+				position: absolute;
+				top: 25%;
+				right: .3333em;
+				padding-right: $base-spacing-unit / 6;
+				transition: all .5s ease;
+			}
 		}
 	}
 

@@ -91,13 +91,15 @@ body {
   margin-bottom: 0; }
   .form-label {
     display: block;
-    padding-bottom: 0.66667em;
-    font-size: .875em; }
+    padding-left: 0.33333em;
+    font-size: .875em;
+    height: 0;
+    color: transparent; }
   .form-title {
-    padding-bottom: 1em;
     color: #676a84; }
   .form-group {
-    padding-bottom: 1em; }
+    padding-bottom: 1em;
+    position: relative; }
     .form-group:last-of-type {
       margin-bottom: 2em; }
   .form-input-field {
@@ -114,7 +116,16 @@ body {
     font-weight: 200; }
     .form-input-field:focus {
       outline: none;
-      border-bottom: 1px solid #2E10FF; }
+      border-bottom: 1px solid #2E10FF;
+      max-width: none;
+      transition: all .5s ease; }
+      .form-input-field:focus ~ label {
+        color: #2E10FF;
+        position: absolute;
+        top: 25%;
+        right: .3333em;
+        padding-right: 0.33333em;
+        transition: all .5s ease; }
   .form-action {
     padding-bottom: 1em;
     padding-top: 1em;
