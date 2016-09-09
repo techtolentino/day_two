@@ -8,8 +8,8 @@
 			<ul class="tasks-list">
 			{{#each user.tasks as |task|}}
 				<li class="tasks-list-item">
-					<div class="tasks-list-item-INFO">
-						<h5>{{task.title}}</h5>
+					<div class="tasks-list-item--INFO">
+						<h5 class="tasks-list-item-title">{{task.title}}</h5>
 						{{!-- description --}}
 						{{#if task.notes}}
 							<p>{{task.notes}}</p>
@@ -27,7 +27,7 @@
 							</ul>
 						{{/if}}
 					</div>
-					<div class="tasks-list-item-STATUS">
+					<div class="tasks-list-item--STATUS">
 						<input type="checkbox">
 					</div>
 				</li>

@@ -170,6 +170,18 @@ body {
 .page-description {
   padding-bottom: 1.66667em; }
 
+.tasks-list-item-title {
+  color: #040404; }
+
+.tasks-list-item {
+  display: flex;
+  justify-content: space-between; }
+  .tasks-list-item--INFO {
+    padding-right: 2em;
+    max-width: 85%; }
+  .tasks-list-item--STATUS {
+    padding-top: 0.5em; }
+
 h1 {
   font-size: 3.157em;
   font-weight: 400;
@@ -194,7 +206,7 @@ h4 {
 
 h5 {
   font-size: 1.20em;
-  font-weight: 200;
+  font-weight: 400;
   margin-top: 0; }
 
 small,

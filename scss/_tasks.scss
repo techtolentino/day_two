@@ -1,0 +1,19 @@
+.tasks {
+	&-list-item-title {
+		color: $black-color;
+	}
+	&-list-item {
+		display: flex;
+		justify-content: space-between;
+		
+		&--INFO {
+			padding-right: $base-spacing-unit;
+			max-width: 85%;
+		}
+		
+		&--STATUS {
+			padding-top: $base-spacing-unit / 4;
+		}
+	}
+
+}
