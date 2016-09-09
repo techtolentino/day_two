@@ -11,15 +11,18 @@ var taskSchema = mongoose.Schema({
 		type: Boolean
 	},
 	resource: {
-		type: String
+		name: String,
+		email: String
 	},
 	notes: {
 		type: String
 	},
-	links: {
-		type: Array,
-		default: []
-	}
+	links: [
+		{
+			title: String,
+			url: String
+		}
+	]
 });
 
 var Task = module.exports = mongoose.model('Task', taskSchema);

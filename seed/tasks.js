@@ -5,27 +5,67 @@ mongoose.connect(process.env.MONGO_DB_DAY_TWO);
 
 var tasks = [
 	{
-		title: "Task 1",
+		title: "Meet your people",
 		squadname: "Demo squad",
 		isDone: false,
-		resource: "John Doe",
-		notes: "Lorem ipsum dolor sit amet.",
+		resource: {
+			name: "Ryan Barber",
+			email: "ryanbarber@test1.com"
+		},
+		notes: "First things first, let's get to know each other. We'll have a quick meeting to introduce ourselves and learn about you!",
 		links: [
-			"http://test1.com",
-			"http://test2.com",
-			"http://test3.com"
+			{
+				title: "About our product team",
+				url: "http://test1.com"
+			},
+			{
+				title: "Team Mission & Vision",
+				url: "mission_vision_doc.pdf"
+			}
 		]
 	},
 	{
-		title: "Task 2",
+		title: "Setting up your environment",
 		squadname: "Demo squad",
 		isDone: false,
-		resource: "James Smith",
-		notes: "Lorem ipsum dolor sit amet.",
+		resource: {
+			name: "James Mitchell",
+			email: "jamesmitchell@test1.com"
+		},
+		notes: "First things first, you need the tools and applications to be able to do your job well. Let's get everything that you'll need!",
 		links: [
-			"http://example1.com",
-			"http://example2.com",
-			"http://example3.com"
+			{
+				title: "Getting started with GitHub",
+				url: "http://test1.com"
+			},
+			{
+				title: "Design environment",
+				url: "http://test1.com"
+			},
+			{
+				title: "Developer environment",
+				url: "http://test1.com"
+			}
+		]
+	},
+	{
+		title: "Logistical tour",
+		squadname: "Demo squad",
+		isDone: false,
+		resource: {
+			name: "Jane Smith",
+			email: "janesith@test1.com"
+		},
+		notes: "In order to comfortably navigate your new workspace, one must become familiar with the landscape. Let's take a tour!",
+		links: [
+			{
+				title: "Campus map",
+				url: "http://test1.com"
+			},
+			{
+				title: "Studio directory PDF",
+				url: "studiodirectory.pdf"
+			}
 		]
 	}
 ]

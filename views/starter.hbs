@@ -8,16 +8,28 @@
 			<ul class="tasks-list">
 			{{#each user.tasks as |task|}}
 				<li class="tasks-list-item">
-					<h5>{{task.title}}</h5>
-					{{!-- description --}}
-					<p>{{task.notes}}</p>
-					<p class="util-meta">Resource: {{task.resource}}</p>
-					{{!-- breakdown into list --}}
-					<p class="util-meta">Related links:
-						{{#each task.links as |link|}}
-							<span><a class="link-base" href="{{link}}">{{link}}</a></span>
-						{{/each}}
-					</p>
+					<div class="tasks-list-item-INFO">
+						<h5>{{task.title}}</h5>
+						{{!-- description --}}
+						{{#if task.notes}}
+							<p>{{task.notes}}</p>
+						{{/if}}
+						{{!-- resource --}}
+						{{#if task.resource}}
+							<p class="util-meta">Resource: <a class="link-base" href="{{task.resource.email}}">{{task.resource.name}}</a></p>
+						{{/if}}
+						{{#if task.links}}
+						{{!-- related links --}}
+							<ul class="util-meta">Related links:
+								{{#each task.links as |link|}}
+									<li class="util-meta"><a class="link-base" href="{{link.url}}">{{link.title}}</a></li>
+								{{/each}}
+							</ul>
+						{{/if}}
+					</div>
+					<div class="tasks-list-item-STATUS">
+						<input type="checkbox">
+					</div>
 				</li>
 				<hr class="divider--GRAY">
 			{{/each}}

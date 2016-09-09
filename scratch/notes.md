@@ -1,5 +1,4 @@
 <!-- user object model -->
-
 {
     userName: {
         "id": 230984732084,
@@ -25,7 +24,6 @@
 
 
 <!-- Task list object model -->
-
 [
     {
         "title": "some task title",
