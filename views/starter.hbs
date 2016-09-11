@@ -7,7 +7,7 @@
 		<div class="tasks">
 			<ul class="tasks-list">
 			{{#each user.tasks as |task|}}
-				<li class="tasks-list-item">
+				<li class="tasks-list-item" data-id="{{task._id}}">
 					<div class="tasks-list-item--INFO">
 						<h5 class="tasks-list-item-title">{{task.title}}</h5>
 						{{!-- description --}}
@@ -38,3 +38,4 @@
 	</div>
 </div>
 <script src="/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

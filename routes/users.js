@@ -1,7 +1,9 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+
 
 var User = require('../models/user');
 var Task = require('../models/tasks');
@@ -110,6 +112,25 @@ router.get('/logout', function(req, res) {
 	req.flash('success_msg', 'You are logged out');
 	res.redirect('/users/login');
 })
+
+router.put('/starter/:_id', function(req, res) {
+    // update requested item from mongodb
+    console.log(req, "REQ");
+
+    var id = req.params;
+
+    Task.findOne({_id: req.params}, function(err, data) {
+        if(err) {
+            console.log(err);
+            res.status(500).send()
+        } else {
+            data.isDone = !data.isDone;
+            data.save();
+            console.log("the db has been updated");
+            res.redirect('/starter');
+        }
+    })
+});
 
 
 module.exports = router;
