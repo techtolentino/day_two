@@ -68,20 +68,20 @@ figcaption {
 
         &:hover {
             color: $accent-color;
-            border-bottom: 1px solid $accent-color;
+            border-bottom: 1px dotted $accent-color;
             transition: color .15s, border-bottom .15s;
         }
     }
 
-    &--warm {
-        color: $accent-color;
+    &--COOL {
+        color: $cool-color;
         transition: color .15s;
         text-decoration: none;
         font-weight: 300;
 
         &:hover {
-         color: darken($accent-color, 20%);
-         border-bottom: 1px solid currentColor;
+         color: darken($cool-color, 20%);
+         border-bottom: 1px dotted currentColor;
          transition: color .15s, border-bottom .15s;
         }
     }

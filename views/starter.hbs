@@ -16,25 +16,25 @@
 						{{/if}}
 						{{!-- resource --}}
 						{{#if task.resource}}
-							<p class="util-meta">Resource: <a class="link-base" href="{{task.resource.email}}">{{task.resource.name}}</a></p>
+							<p class="util-meta">Resource: <a class="link--COOL" href="{{task.resource.email}}">{{task.resource.name}}</a></p>
 						{{/if}}
 						{{#if task.links}}
 						{{!-- related links --}}
 							<ul class="util-meta">Related links:
 								{{#each task.links as |link|}}
-									<li class="util-meta"><a class="link-base" href="{{link.url}}">{{link.title}}</a></li>
+									<li class="util-meta"><a class="link--COOL" href="{{link.url}}">{{link.title}}</a></li>
 								{{/each}}
 							</ul>
 						{{/if}}
 					</div>
 					<div class="tasks-list-item--STATUS">
-						<input type="checkbox">
+						<input id="form-checkbox" type="checkbox" value={{task.isDone}}>
 					</div>
 				</li>
 				<hr class="divider--GRAY">
 			{{/each}}
 			</ul>
 		</div>
-
 	</div>
 </div>
+<script src="/js/main.js"></script>

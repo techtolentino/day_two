@@ -96,7 +96,8 @@ body {
     height: 0;
     color: transparent; }
   .form-title {
-    color: #676a84; }
+    color: #676a84;
+    padding-bottom: 1em; }
   .form-group {
     padding-bottom: 1em;
     position: relative; }
@@ -239,17 +240,17 @@ figcaption {
   text-decoration: none; }
   .link-base:hover {
     color: #2E10FF;
-    border-bottom: 1px solid #2E10FF;
+    border-bottom: 1px dotted #2E10FF;
     transition: color .15s, border-bottom .15s; }
 
-.link--warm {
-  color: #2E10FF;
+.link--COOL {
+  color: #2BADE2;
   transition: color .15s;
   text-decoration: none;
   font-weight: 300; }
-  .link--warm:hover {
-    color: #1500a9;
-    border-bottom: 1px solid currentColor;
+  .link--COOL:hover {
+    color: #146e93;
+    border-bottom: 1px dotted currentColor;
     transition: color .15s, border-bottom .15s; }
 
 @media screen and (max-width: 48em) {
