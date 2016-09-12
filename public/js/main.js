@@ -1,21 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
-	var formCheckBox = document.getElementById('form-checkbox');
-	
-	formCheckBox.addEventListener('click', function(){
-		console.log('yo, you did it!')
+    Array.from(document.getElementsByClassName('form-checkbox')).forEach(checkbox => {
+    	checkbox.addEventListener('click', function(){
+            var id = $(this).parent().parent().attr('data-id');
 
-        var id = $(this).parent().parent().attr('data-id');
-
-        console.log(id, "<<<<<<");
-
-        $.ajax({
-            type: 'PUT',
-            url: '/starter/' + id,
-            success: function(data){
-                location.reload();
-            }
-        });
-	})
+            $.ajax({
+                type: 'PUT',
+                url: '/starter/' + id,
+                success: function(data){
+                    window.location.href = response.redirect;
+                }
+            });
+    	})
+    });
 });
 
 
