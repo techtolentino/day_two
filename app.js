@@ -3,6 +3,7 @@ var express = require('express'),
 	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
 	exphbs = require('express-handlebars'),
+	helpers = require('./lib/helpers');
 	expressValidator = require('express-validator'),
 	flash = require('connect-flash'),
 	session = require('express-session'),
@@ -20,12 +21,16 @@ var starter = require('./routes/starter');
 // Init the app
 var app = express();
 
-// view engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs({
+// Handlebars Instance
+var hbs = exphbs.create({
 	defaultLayout: 'layout',
 	extname: '.hbs',
-	helpers: helpers = require('./lib/helpers')}));
+	helpers:  helpers
+});
+
+// view engine
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 // BodyParser middleware
